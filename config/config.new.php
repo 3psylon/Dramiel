@@ -82,7 +82,6 @@ $config["enabledPlugins"] = array( // remove the slashes for the plugins you wan
     //"rssReader", //Post news to rss feeds
 );
 
-
 $config["plugins"] = array(
     //uses the provided api's to post evemails to a channel
     "evemails" => array(
@@ -140,13 +139,34 @@ $config["plugins"] = array(
         "exempt" => array("", "") // role names that are exempt from auth checks (wont be removed by the bot)
     ),
     //Killmail posting
-    "getKillmails" => array(
-        "channel" => 0, //killmails post to this channel
-        "corpID" => 0, //corpid for killmails
-        "allianceID" => 0, //allianceid for killmails (Leave as 0 if using it for a corp)
-        "lossMails" => "true", //set as true to post both kills and losses, false to post only kills.
-        "spamAmount" => 10, //Max amount of kills the bot will post every 10 minutes. Default is 15 and won't get the bot kicked for spamming.
-        "startMail" => 1, //Put the zkill killID of your latest killmail. Otherwise it will pull from the beginning of time.
+    "getKillmails" => array( //add more groups if needed
+        "group1" => array(
+            "active" => "true", //if this is active set it true, otherwise leave it false
+            "channel" => 0, //killmails post to this channel
+            "corpID" => 0, //corpid for killmails
+            "allianceID" => 0, //allianceid for killmails (Leave as 0 if using it for a corp)
+            "lossMails" => "true", //set as true to post both kills and losses, false to post only kills.
+            "spamAmount" => 10, //Max amount of kills the bot will post every 10 minutes.
+            "startMail" => 1, //Put the zkill killID of your latest killmail. Otherwise it will pull from the beginning of time.
+        ),
+        "group2" => array(
+            "active" => "false", //if this is active set it true, otherwise leave it false
+            "channel" => 0, //killmails post to this channel
+            "corpID" => 0, //corpid for killmails
+            "allianceID" => 0, //allianceid for killmails (Leave as 0 if using it for a corp)
+            "lossMails" => "true", //set as true to post both kills and losses, false to post only kills.
+            "spamAmount" => 10, //Max amount of kills the bot will post every 10 minutes.
+            "startMail" => 1, //Put the zkill killID of your latest killmail. Otherwise it will pull from the beginning of time.
+        ),
+        "group3" => array(
+            "active" => "false", //if this is active set it true, otherwise leave it false
+            "channel" => 0, //killmails post to this channel
+            "corpID" => 0, //corpid for killmails
+            "allianceID" => 0, //allianceid for killmails (Leave as 0 if using it for a corp)
+            "lossMails" => "true", //set as true to post both kills and losses, false to post only kills.
+            "spamAmount" => 10, //Max amount of kills the bot will post every 10 minutes.
+            "startMail" => 1, //Put the zkill killID of your latest killmail. Otherwise it will pull from the beginning of time.
+        ),
     ),
     //Siphon detection works by looking for multiples of 100 inside standard silos. So if you take out a weird number it will trigger false positives.
     "siphons" => array(
